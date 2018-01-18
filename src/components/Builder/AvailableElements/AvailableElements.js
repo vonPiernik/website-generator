@@ -9,8 +9,8 @@ import addSection from '../../../actions/builderActions.js'
 class AvailableElements extends Component {
 	render() {
 		return (
-	      <div className="Builder">
-	        <p>Dostępne elementy: </p>
+	      <div className="AvailableElements">
+	        <h3>Dostępne elementy: </h3>
 					<button 
 						disabled={this.props.addedImportantElements.navbar} 
 						onClick={() => {this.props.addSection('navbar')}}>Nawigacja</button>

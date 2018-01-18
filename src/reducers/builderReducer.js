@@ -27,13 +27,14 @@ export default function reducer(state=initialState, action) {
 				elements: state.elements.filter( function(el, index){
 					return index !== action.payload.element.index
 				}),
-				addedImportantElements:  Object.assign({}, state.addedImportantElements, action.payload.addedImportantElements )
+				addedImportantElements:  Object.assign({}, state.addedImportantElements, action.payload.addedImportantElements ),
+				activeElement: null
 			};
 		}
 		case ACTIVATE: {
 			return {
 				...state, 
-				activeElement: action.payload.index
+				activeElement: action.payload
 			};
 		}
 		default: {

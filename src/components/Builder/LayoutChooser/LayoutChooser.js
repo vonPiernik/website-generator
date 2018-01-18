@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// import styles
+import './LayoutChooser.css'
 // import connect
 import { connect } from 'react-redux'
 
@@ -14,41 +16,63 @@ class LayoutChooser extends Component {
 
         this.layouts = {
             navbar: [
-                'default'
+                {
+                    name: 'Domyślny układ',
+                    slug: 'default'
+                }
             ],
             section: [
-                'default'
+                {
+                    name: 'Domyślny układ',
+                    slug: 'default'
+                },
+                {
+                    name: 'Odwrócony',
+                    slug: 'inverted'
+                }
             ],
             footer: [
-                'default'
+                {
+                    name: 'Domyślny układ',
+                    slug: 'default'
+                },
+                {
+                    name: 'Duża stopka',
+                    slug: 'big'
+                },
+                {
+                    name: 'Wielka stopka',
+                    slug: 'bigger'
+                }
             ]
         }
     }
 	render() {
-        console.log(this.layouts)
+        console.log(this)
         if (this.props.activeElement !== null) {
+            var activeElementType = this.props.elements[this.props.activeElement]
             return (
             <div className="LayoutChooser">
-                <p>Wybierz układ: </p>		
-                <label>
-                    <input type="radio" name="layout" value="default" />
-                    Default
-                </label>
-                <label>
-                    <input type="radio" name="layout" value="layout-1" />
-                    Layout 1
-                </label>
-                <label>
-                    <input type="radio" name="layout" value="layout-2" />
-                    Layout 2
-                </label>
+                <h3>Wybierz układ: </h3>
+                
+
+				{this.layouts[activeElementType.name]
+                .map((element, index) =>
+                    <label key={ "layout-option-" + index }>
+                        <input 
+                            type="radio" name="layout" value={element.slug}  
+                            defaultChecked={ element.slug==activeElementType.layout && 'true' }/>
+                        { element.name }
+                    </label>
+                )}
+                
 
             </div>
             );
         } else {
             return (
                 <div className="LayoutChooser">
-                    <p>Wybierz układ: </p>		
+                    <h3>Wybierz układ: </h3>		
                     <small>Wybierz element strony, aby dostosować jego układ </small>					
                 </div>
             );
@@ -58,7 +82,8 @@ class LayoutChooser extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		activeElement: state.builder.activeElement
+		activeElement: state.builder.activeElement,
+		elements: state.builder.elements
 	}
 }
 const mapDispatchToProps = (dispatch) => {

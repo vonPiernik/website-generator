@@ -3,6 +3,7 @@ export default function addSection(el = 'section') {
 		element: {
 			name: el,
 			weight: 1,
+			layout: 'default'
 		},
 		addedImportantElements: {}
 	}
