@@ -6,62 +6,26 @@ import './LayoutChooser.css'
 import { connect } from 'react-redux'
 
 // import actions
-import addSection from '../../../actions/builderActions.js'
+import addSection, { changeSectionLayout } from '../../../actions/builderActions.js'
 
 class LayoutChooser extends Component {
     constructor(props){
-        super(props)
-
-
-
-        this.layouts = {
-            navbar: [
-                {
-                    name: 'Domyślny układ',
-                    slug: 'default'
-                }
-            ],
-            section: [
-                {
-                    name: 'Domyślny układ',
-                    slug: 'default'
-                },
-                {
-                    name: 'Odwrócony',
-                    slug: 'inverted'
-                }
-            ],
-            footer: [
-                {
-                    name: 'Domyślny układ',
-                    slug: 'default'
-                },
-                {
-                    name: 'Duża stopka',
-                    slug: 'big'
-                },
-                {
-                    name: 'Wielka stopka',
-                    slug: 'bigger'
-                }
-            ]
-        }
+        super(props)        
     }
 	render() {
-        console.log(this)
-        if (this.props.activeElement !== null) {
-            var activeElementType = this.props.elements[this.props.activeElement]
+        if (this.props.activeElement.index !== null) {
             return (
             <div className="LayoutChooser">
                 <h3>Wybierz układ: </h3>
                 
 
-				{this.layouts[activeElementType.name]
+				{this.props.activeElement.availableLayouts
                 .map((element, index) =>
                     <label key={ "layout-option-" + index }>
                         <input 
                             type="radio" name="layout" value={element.slug}  
-                            defaultChecked={ element.slug==activeElementType.layout && 'true' }/>
+                            checked={ element.slug === this.props.activeElement.layout && 'true' } 
+                            onChange={() => this.props.changeSectionLayout(this.props.activeElement.index,element.slug)} />
                         { element.name }
                     </label>
                 )}
@@ -90,7 +54,10 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		addSection: (el = 'section') => {
 			dispatch(addSection(el))
-		}
+        },
+        changeSectionLayout(index, layout = 'default'){
+            dispatch(changeSectionLayout(index,layout))
+        }
 	}
 }
 

@@ -13,7 +13,7 @@ class Section extends Component {
 			<div className="Section">
         		{this.props.element} <strong>({this.props.index})</strong> 
 				<button onClick={() => {this.props.removeSection(this.props.index, this.props.element) }}> Usun </button>
-				<button onClick={() => {this.props.activateSection(this.props.index) }}> Wybierz układ </button>
+				<button onClick={() => {this.props.activateSection(this.props.index,this.props.element) }}> Wybierz układ </button>
 		    </div>
 	    );
 	}
@@ -24,8 +24,8 @@ const mapDispatchToProps = (dispatch) => {
 		removeSection: (index, el) => {
 			dispatch(removeSection(index, el))
 		},
-		activateSection: (index) => {
-			dispatch(activateSection(index))
+		activateSection: (index,type) => {
+			dispatch(activateSection(index,type))
 		}
 	}
 }

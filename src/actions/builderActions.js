@@ -1,3 +1,5 @@
+import Layouts from './Layouts'
+console.log(Layouts)
 export default function addSection(el = 'section') {
 	const payload = {
 		element: {
@@ -36,20 +38,27 @@ export function removeSection(index, el = 'section') {
 	}
 }
 
-export function activateSection(index){
+export function activateSection(index, type){
 	return {
 		type: "ACTIVATE_SECTION",
-		payload: index,
+		payload: {
+			index: index,
+			data: {
+				active: true
+			},
+			availableLayouts: Layouts[type],
+		}
 	}
 }
 
-export function changeSectionLayout(layout = 'default', index){
-	const payload = {
-		index: index,
-		layout: layout
-	}
+export function changeSectionLayout(index,layout = 'default'){
 	return {
 		type: "CHANGE_SECTION_LAYOUT",
-		payload: payload,
+		payload: {
+			index: index,
+			data: {
+				layout: layout
+			}
+		}
 	}
 }
