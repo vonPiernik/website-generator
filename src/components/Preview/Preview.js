@@ -12,21 +12,29 @@ import Section from './Elements/Section/Section.js'
 
 class Preview extends Component {
 	render() {
-    	return (
-			<div className="Preview">
-				{this.props.elements
-				.sort(function(a,b) { return a.weight - +b.weight })
-				.map((element, index) =>
-					<div className="Section-wrap" key={index}>
-						<Section  
-							index={index} 
-							element={element.name} />
+		if (this.props.elements[0]) {
+			return (
+				<div className="Preview">
+					{this.props.elements
+					.sort(function(a,b) { return a.weight - +b.weight })
+					.map((element, index) =>
+						<div className="Section-wrap" key={index}>
+							<Section  
+								index={index} 
+								element={element.name} />
 
-						
-					</div>
-			    )}
-		    </div>
-	    );
+							
+						</div>
+					)}
+				</div>
+			);
+		} else {
+			return (
+				<div className="Preview">
+					<p>Aby rozpocząć budowanie strony wybierz element z listy.</p>
+				</div>
+			)
+		}
 	}
 }
 const mapStateToProps = (state) => {

@@ -28,6 +28,6 @@ header hr {
 /* >>----------> [ grid ] <-----------<< */
 .grid {
     display: grid;
-    grid-template-columns: 100px auto auto 100px;
+    grid-template-columns: 100px 1fr 1fr 100px;
     grid-column-gap: 15px;
 }

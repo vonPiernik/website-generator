@@ -4,12 +4,7 @@ const ACTIVATE = 'ACTIVATE_SECTION'
 const CHANGE_LAYOUT = 'CHANGE_SECTION_LAYOUT'
 
 const initialState = {
-	elements: [{
-		name: 'section', 
-		weight: 1, 
-		layout: 'default',
-		active: false
-	}],
+	elements: [],
 	addedImportantElements: {},
 	activeElement: {
 		availableLayouts: null,
