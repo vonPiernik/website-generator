@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import JSZip from 'jszip'
-import fileSaver, { saveAs } from 'file-saver'
+import { saveAs } from 'file-saver'
 import $ from "jquery"
 import { connect } from 'react-redux'
 
@@ -38,10 +38,13 @@ class Generator extends Component {
 
 	render() {
 		return (
-            <button 
-            disabled={ !this.props.elements[0] }
-            onClick={ this.generateWebsite.bind(this) } 
-            id="generateWebsiteButton" ref={el => this.el = el}>Wygeneruj stronę</button>
+            <div className="Generator">
+                <h3>3. Wygeneruj gotową strone <strong>( i pobierz jako plik .zip )</strong></h3>
+                <button 
+                disabled={ !this.props.elements[0] }
+                onClick={ this.generateWebsite.bind(this) } 
+                id="generateWebsiteButton" ref={el => this.el = el}>Wygeneruj stronę</button>
+            </div>
         );
     }
 }

@@ -6,6 +6,7 @@ import './Builder.css';
 // import components
 import AvailableElements from './AvailableElements/AvailableElements'
 import LayoutChooser from './LayoutChooser/LayoutChooser'
+import Generator from './Generator'
 
 class Builder extends Component {
 	render() {
@@ -14,6 +15,9 @@ class Builder extends Component {
 				<AvailableElements />
 
 				<LayoutChooser />
+
+
+				<Generator />
 			</div>
 	    );
 	}

@@ -31,7 +31,7 @@ class Preview extends Component {
 		} else {
 			return (
 				<div className="Preview">
-					<p>Aby rozpocząć budowanie strony wybierz element z listy.</p>
+					<p>Aby rozpocząć budowanie strony wybierz jeden z dostępnych elementów.</p>
 				</div>
 			)
 		}

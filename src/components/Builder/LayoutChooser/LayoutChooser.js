@@ -9,14 +9,11 @@ import { connect } from 'react-redux'
 import addSection, { changeSectionLayout } from '../../../actions/builderActions.js'
 
 class LayoutChooser extends Component {
-    constructor(props){
-        super(props)        
-    }
 	render() {
         if (this.props.activeElement.index !== null) {
             return (
             <div className="LayoutChooser">
-                <h3>Wybierz układ: </h3>
+                <h3>2. Wybierz układ: </h3>
                 
 
 				{this.props.activeElement.availableLayouts
@@ -36,7 +33,7 @@ class LayoutChooser extends Component {
         } else {
             return (
                 <div className="LayoutChooser">
-                    <h3>Wybierz układ: </h3>		
+                    <h3>2. Wybierz układ: </h3>		
                     <small>Wybierz element strony, aby dostosować jego układ </small>					
                 </div>
             );

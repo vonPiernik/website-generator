@@ -32,3 +32,11 @@
     background: #ccc;
     color: #848484;
 }
+
+.Builder .Generator{
+    margin-top: 50px;
+}
+
+.Builder h3{
+    font-size: 23px;
+}

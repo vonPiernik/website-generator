@@ -65,7 +65,6 @@ export default function reducer(state=initialState, action) {
 			};
 		}
 		case CHANGE_LAYOUT: {
-			console.log(state.elements[action.payload.index])
 			return {
 				...state,
 				elements: updateObjectInArray(state.elements, action),

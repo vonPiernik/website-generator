@@ -4,9 +4,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 // import components
-import Builder from './Builder/Builder'
+import Builder from './Builder/Builder' 
 import Preview from './Preview/Preview'
-import Generator from './Generator'
 
 
 
@@ -16,8 +15,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           
-          <h1 className="App-title">Very Freaking Simple Website Generator</h1>
-          <h4>by <strong>Norbert Kaźmierczak</strong></h4>
+          <h1 className="App-title">Cholernie prosty generator stron</h1>
+          <h4>autor: <strong>Norbert Kaźmierczak, <a href="http://webnis.pl/" target="_BLANK">WEBNIS</a></strong></h4>
           <hr />
 
         </header>
@@ -25,9 +24,9 @@ class App extends Component {
           <div className="grid grid--main">
             <Builder />
             <Preview />
+            
           </div>
         </main>
-            <Generator />
       </div>
     );
   }

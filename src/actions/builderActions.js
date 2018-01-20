@@ -1,5 +1,4 @@
 import Layouts from './Layouts'
-console.log(Layouts)
 export default function addSection(el = 'section') {
 	const payload = {
 		element: {

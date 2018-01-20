@@ -10,7 +10,7 @@ class AvailableElements extends Component {
 	render() {
 		return (
 	      <div className="AvailableElements">
-	        <h3>Dostępne elementy: </h3>
+	        <h3>1. Dostępne elementy: </h3>
 					<button 
 						disabled={this.props.addedImportantElements.navbar} 
 						onClick={() => {this.props.addSection('navbar')}}>Nawigacja</button>
