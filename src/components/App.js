@@ -16,7 +16,7 @@ class App extends Component {
         <header className="App-header">
           
           <h1 className="App-title">Cholernie prosty generator stron</h1>
-          <h4>autor: <strong>Norbert Kaźmierczak, <a href="http://webnis.pl/" target="_BLANK">WEBNIS</a></strong></h4>
+          <h4>autor: <strong>Norbert Kaźmierczak, <a href="http://webnis.pl/" target="_BLANK" rel="noopener noreferrer">WEBNIS</a></strong></h4>
           <hr />
 
         </header>

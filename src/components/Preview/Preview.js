@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 
 // import components
-import Section from './Elements/Section/Section.js'
+import Section from './Elements/Section/Section'
 
 class Preview extends Component {
 	render() {
@@ -18,13 +18,12 @@ class Preview extends Component {
 					{this.props.elements
 					.sort(function(a,b) { return a.weight - +b.weight })
 					.map((element, index) =>
-						<div className="Section-wrap" key={index}>
-							<Section  
-								index={index} 
-								element={element.name} />
 
+							<Section  
+								key={index}
+								index={index} 
+								element={element} />
 							
-						</div>
 					)}
 				</div>
 			);

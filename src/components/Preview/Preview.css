@@ -4,3 +4,75 @@
     border: 2px dashed;
     text-align: center;
 }
+
+.preview-element.active-true {
+    outline: 2px dashed #FF9800;
+    outline-offset: 5px;
+}
+
+/* navbar preview styles */
+
+.preview-navbar {
+    height: 40px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.preview-navbar-default {
+    background: #dfdfdf;
+    color: #222;
+}
+.preview-element .preview-action-buttons {
+    background: #000000bf;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: none;
+    bottom: 0;
+    text-align: center;
+    padding: 6px;
+}
+
+.preview-element {
+    position: relative;
+}
+
+.preview-element .preview-action-buttons button {
+    border: 0;
+    margin: 0 3px;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 8px 10px;
+    background: transparent;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #fff;
+}
+.preview-element .preview-action-buttons button:first-child {
+    color: red;
+}
+.preview-element:hover .preview-action-buttons {
+    display: block;
+}
+
+.preview-navbar .brand {
+    float: left;
+    height: 10px;
+    background: #222;
+    width: 60px;
+    border-radius: 5px;
+    display: block;
+    margin: 15px 10px;
+}
+
+.preview-navbar .menu-item {
+    float: right;
+    height: 7px;
+    background: #222;
+    width: 45px;
+    border-radius: 10px;
+    display: block;
+    margin: 17px 10px;
+}
